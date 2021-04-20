@@ -3,11 +3,9 @@ const request = require('request');
 const cheerio = require('cheerio');
 const prompt = require("prompt-sync")({ sigint: true });
 
-
 const domain = 'https://telegra.ph';
-const rootFolder = 'album';
 
-const downloadAlbum = function(url) {
+const downloadAlbum = function(url, rootFolder = 'album') {
 	if (!fs.existsSync(rootFolder)){
 	    fs.mkdirSync(rootFolder);
 	}
@@ -42,9 +40,14 @@ const folderNamePreprocess = function(folder_name) {
 }
 
 const downloadImage = function(uri, path, callback){
-	request.head(uri, function(err, res, body){
-		request(uri).pipe(fs.createWriteStream(path)).on('close', callback);
-	});
+	try {
+		request.head(uri, function(err, res, body){
+			request(uri).pipe(fs.createWriteStream(path)).on('close', callback);
+		});
+	} catch(err) {
+		console.log(err);
+	}
+	
 };
 
 const downloadImages = function(pictures) {
@@ -57,6 +60,7 @@ const downloadImages = function(pictures) {
 };
 
 //Readline
-const url = prompt("Enter Telegraph URL : ");
-downloadAlbum(url);
+// const url = prompt("Enter Telegraph URL : ");
+// downloadAlbum(url);
 
+module.exports = { downloadAlbum }

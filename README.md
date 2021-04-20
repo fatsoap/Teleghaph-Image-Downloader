@@ -8,9 +8,20 @@ This is a web spider which can download images in telegraph. Simply input url of
 
 ## How 2 use
 
-1. Install modules with `yarn` or `npm install`
-2. Run index.js with `node index.js`
-3. Input your Telegraph URL
-4. Wait for download
-4. Done ! :sunglasses: You can find images in 'album' folder :muscle:
+1. Install modules 
+```
+yarn add @fatsoap/telegraph-downloader
+// or
+npm install @fatsoap/telegraph-downloader
+```
+2. Require function 
+```
+const { downloadAlbum } from require('@fatsoap/telegraph-downloader');
+```
+3. Run function
+```
+downloadAlbum(yourURL, dest_folder);
+// dest_folder will be 'album' if no input.
+```
+4. Done ! :sunglasses: You can find images in dest folder :muscle:
 

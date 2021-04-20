@@ -1,12 +1,23 @@
 {
-  "name": "Telegraph-Downloader",
+  "name": "@fatsoap/telegraph-downloader",
   "version": "1.0.0",
   "main": "index.js",
   "license": "MIT",
   "dependencies": {
     "cheerio": "^1.0.0-rc.6",
-    "fs": "^0.0.1-security",
     "prompt-sync": "^4.2.0",
     "request": "^2.88.2"
+  },
+  "author": "fatsoap",
+  "contributors": [
+  {
+    "author": "fatsoap",
+    "email" : "fatsoap420@icloud.com", 
+    "url" : "https://github.com/fatsoap"
   }
+],
+  "bugs": {
+    "url": "https://github.com/fatsoap/Teleghaph-Image-Downloader/issues"
+  },
+  "homepage": "https://github.com/fatsoap/Teleghaph-Image-Downloader"
 }
